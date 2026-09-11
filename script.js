@@ -497,3 +497,16 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCartUI();
   initCountdownTimer();
 });
+
+
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    res.statusCode = 200; // ស្ថានភាពថាជោគជ័យ
+    res.setHeader('Content-Type', 'text/plain'); // ប្រភេទទិន្នន័យជា text
+    res.end('សួស្តី! នេះជា Web Server ដំបូងរបស់ខ្ញុំ!'); // ផ្ញើចម្លើយទៅ client
+});
+
+server.listen(3000, () => {
+    console.log('Server កំពុងដំណើរការនៅ port 3000');
+});
